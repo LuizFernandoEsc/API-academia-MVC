@@ -1,0 +1,40 @@
+﻿@model UsuarioModel
+@{
+    ViewData["Title"] = "Criar Usuario";
+}
+<div class="text-center">
+    <h1>Criar Usuario</h1>
+    
+    
+    
+    
+    <form asp-controller="Usuarios" asp-action="criar" method="post">
+  <div class="form-group">
+    <label for="nome">Nome:</label>
+    <input type="text" asp-for="name" class="form-control" id="nome" placeholder="Colocar nome">
+  </div>
+  <div class="form-group">
+    <label for="celular">Celular:</label>
+    <input type="text" asp-for="numero" class="form-control" id="celular" placeholder="Colocar celular">
+  </div>
+  <div class="form-group">
+    <label for="CPF">CPF:</label>
+    <input type="text" asp-for="cpf" class="form-control" id="CPF" placeholder="Colocar CPF">
+  </div>
+  <br />
+  <div class="form-group">
+    <label for="plano">Plano:</label>
+    <select multiple class="form-control" asp-for="plano" id="plano">
+      <option>Mensal padrão</option>
+      <option>Mensal Black</option>
+      <option>Anual Padrão</option>
+      <option>Anual Black</option>
+      <option>Anual Black Master</option>
+    </select>
+  </div>
+  <br />
+  <button type="submit" class="btn btn-primary">Confirmar criação</button>
+  <a role="button" asp-controller="Usuarios" asp-action="Index" class="btn btn-danger">Cancelar</a>
+</form>
+</div>
+

@@ -1,0 +1,17 @@
+﻿@model UsuarioModel
+@{
+    ViewData["Title"] = "Apagar Usuario";
+}
+<div class="text-center">
+    <h1>Apagar Usuario</h1>
+    <h3>DESEJA REALMENTE APAGAR O USUARIO: @Model.name?</h3>  
+    <h3>@Model.numero</h3>
+    <h3>@Model.cpf</h3>
+    <h3>@Model.plano</h3>
+    <form asp-controller="Usuarios" asp-action="excluir" method="post">
+        <input type="hidden" asp-for="Id" />
+        <button type="submit" class="btn btn-primary">Confirmar exclusão</button>
+        <a role="button" asp-controller="Usuarios" asp-action="Index" class="btn btn-danger">Cancelar</a>
+    </form>
+</div>
+

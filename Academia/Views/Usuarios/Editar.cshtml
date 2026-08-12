@@ -1,0 +1,41 @@
+﻿@model UsuarioModel
+@{
+    ViewData["Title"] = "Editar Usuario";
+}
+<div class="text-center">
+    <h1>Editar Usuario</h1>
+    
+    
+    
+<form asp-controller="Usuarios" asp-action="alterar" method="post">
+        <input type="hidden" asp-for="Id" />
+        <div class="form-group">
+            <label for="nome">Nome:</label>
+            <input type="text" asp-for="name" class="form-control" id="nome" placeholder="Colocar nome">
+        </div>
+        <div class="form-group">
+            <label for="celular">Celular:</label>
+            <input type="text" asp-for="numero" class="form-control" id="celular" placeholder="Colocar celular">
+        </div>
+        <div class="form-group">
+            <label for="CPF">CPF:</label>
+            <input type="text" asp-for="cpf" class="form-control" id="CPF" placeholder="Colocar CPF">
+        </div>
+        <br />
+        <div class="form-group">
+            <label for="plano">Plano:</label>
+            <select class="form-control" asp-for="plano" id="plano">
+                <option value="Mensal padrão">Mensal padrão</option>
+                <option value="Mensal Black">Mensal Black</option>
+                <option value="Anual Padrão">Anual Padrão</option>
+                <option value="Anual Black">Anual Black</option>
+                <option value="Anual Black Master">Anual Black Master</option>
+            </select>
+        </div>
+  <br />
+
+  <button type="submit" class="btn btn-primary">Confirmar edição</button>
+  <a role="button" asp-controller="Usuarios" asp-action="Index" class="btn btn-danger">Cancelar</a>
+</form>
+</div>
+
